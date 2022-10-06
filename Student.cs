@@ -48,5 +48,26 @@ namespace Classes_Programming_Assignment___Hunter
                 return _studentNumber; 
             }
         }
+        public override string ToString()
+        {
+            return _firstName + " " + _lastName;
+        }
+        public void ResetStudentNumber()
+        {
+            this._studentNumber = 555000 + generator.Next(0, 1000);
+        }
+        private void GenerateEmail()
+        {
+            string email = "";
+            if(this.FirstName.Length < 3 || this.LastName.Length < 3)
+            {
+                this._email = $"default{this.StudentNumber - 555000}@ICS4U.com";
+            }
+            else
+            {
+
+            }
+            this._email = email;
+        }
     }
 }
