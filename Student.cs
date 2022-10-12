@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes_Programming_Assignment___Hunter
 {
-    internal class Student
+    internal class Student : IComparable<Student>
     {
         private static Random generator = new Random();
         private string _firstName;
@@ -83,6 +83,13 @@ namespace Classes_Programming_Assignment___Hunter
                 this._email += this._lastName.Substring(0,3).ToLower();
             }
             this._email += $"{this._studentNumber - 555000}@ICS4U.com";
+        }
+        public int CompareTo(Student that)
+        {
+            if (this.LastName.CompareTo(that.LastName) == 0)
+                return this.FirstName.CompareTo(that.FirstName);
+            else
+                return this.LastName.CompareTo(that.LastName);
         }
     }
 }
