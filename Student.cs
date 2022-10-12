@@ -20,7 +20,7 @@ namespace Classes_Programming_Assignment___Hunter
             this._studentNumber = 555000 + generator.Next(0, 1000);
         }
         public string FirstName
-        {
+        { 
             get
             {
                 return _firstName;
