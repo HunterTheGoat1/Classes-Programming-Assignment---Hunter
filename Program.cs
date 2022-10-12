@@ -4,8 +4,21 @@
     {
         static void Main(string[] args)
         {
-            Student person = new Student("Robert", "Ross");
-            Console.WriteLine(person);
+            List<Student> studentList = new List<Student>();
+            studentList.Add(new Student("Hunter", "Wilson"));
+            studentList.Add(new Student("Kian", "Dufraimont"));
+            studentList.Add(new Student("Joe", "Looper"));
+
+            string firstnameforthing = Console.ReadLine();
+            string lastnameforthing = Console.ReadLine();
+            studentList.Add(new Student(firstnameforthing, lastnameforthing));
+
+            foreach (var student in studentList)
+            {
+                Console.WriteLine(student);
+                Console.WriteLine(student.StudentNumber);
+                Console.WriteLine(student.Email);
+            }
         }
     }
 }

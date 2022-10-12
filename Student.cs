@@ -18,9 +18,10 @@ namespace Classes_Programming_Assignment___Hunter
             this._firstName = firstName;
             this._lastName = lastName;
             this._studentNumber = 555000 + generator.Next(0, 1000);
+            GenerateEmail();
         }
         public string FirstName
-        { 
+        {
             get
             {
                 return _firstName;
@@ -28,6 +29,7 @@ namespace Classes_Programming_Assignment___Hunter
             set
             {
                 this._firstName=value;
+                GenerateEmail();
             }
         }
         public string LastName
@@ -39,6 +41,14 @@ namespace Classes_Programming_Assignment___Hunter
             set
             {
                 this._lastName = value;
+                GenerateEmail();
+            }
+        }
+        public string Email
+        {
+            get
+            {
+                return _email;
             }
         }
         public int StudentNumber
@@ -55,21 +65,22 @@ namespace Classes_Programming_Assignment___Hunter
         public void ResetStudentNumber()
         {
             this._studentNumber = 555000 + generator.Next(0, 1000);
+            GenerateEmail();
         }
         private void GenerateEmail()
         {
             this._email = "";
             if (this._firstName.Length < 3){
-                this._email += this._firstName;
+                this._email += this._firstName.ToLower();
             }
             else{
-                this._email += this._firstName.Substring(3);
+                this._email += this._firstName.Substring(0,3).ToLower();
             }
             if (this.LastName.Length < 3){
-                this._email += this._lastName;
+                this._email += this._lastName.ToLower();
             }
             else{
-                this._email += this._lastName.Substring(3);
+                this._email += this._lastName.Substring(0,3).ToLower();
             }
             this._email += $"{this._studentNumber - 555000}@ICS4U.com";
         }
