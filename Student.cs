@@ -70,17 +70,19 @@ namespace Classes_Programming_Assignment___Hunter
         private void GenerateEmail()
         {
             this._email = "";
-            if (this._firstName.Length < 3){
-                this._email += this._firstName.ToLower();
-            }
-            else{
-                this._email += this._firstName.Substring(0,3).ToLower();
-            }
             if (this.LastName.Length < 3){
                 this._email += this._lastName.ToLower();
             }
             else{
                 this._email += this._lastName.Substring(0,3).ToLower();
+            }
+            if (this._firstName.Length < 3)
+            {
+                this._email += this._firstName.ToLower();
+            }
+            else
+            {
+                this._email += this._firstName.Substring(0, 3).ToLower();
             }
             this._email += $"{this._studentNumber - 555000}@ICS4U.com";
         }
